@@ -21,6 +21,6 @@ public class UserBO {
 				.build());
 	}
 	public UserVO findById(int id) {
-		return repository.getOne(id);
+		return repository.findById(id).get();
 	}
 }

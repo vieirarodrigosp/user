@@ -27,6 +27,7 @@ public class UserController {
 	@ApiOperation(value="This Service fetches the user from the database by id.")
 	@GetMapping(path = "/v1/users/{id}")
 	public @ResponseBody UserVO findById(@PathVariable int id) {
-		return userBO.findById(id);
+		UserVO user = userBO.findById(id);
+		return user;
 	}
 }

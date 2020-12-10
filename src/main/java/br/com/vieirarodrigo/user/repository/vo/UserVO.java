@@ -1,5 +1,6 @@
 package br.com.vieirarodrigo.user.repository.vo;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -20,14 +21,15 @@ import lombok.Setter;
 @AllArgsConstructor
 @Entity
 @Table(name = "USER")
-public class UserVO {
+public class UserVO implements Serializable {
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	@Column(name = "FULL_NAME")
-	private String fullName;
+	private String fullname;
 	private String email;
-	private String nickName;
+	private String nickname;
 	private String password;
 	@Column(name = "CREATED_AT")
 	private Date created;
