@@ -1,5 +1,7 @@
 package br.com.vieirarodrigo.user.business.object;
 
+import java.text.DateFormat;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -13,11 +15,11 @@ public class UserBO {
 	private UserRepository repository;
 	public UserVO save(UserDTO user) {
 		return repository.save(UserVO.builder()
-				.fullName(user.getFullName())
-				.email(user.getEmail())
-				.nickName(user.getNickName())
-				.password(user.getPassword())
-				.created(user.getCreated())
+				.fullName(user.fullName)
+				.email(user.email)
+				.nickName(user.nickName)
+				.password(user.password)
+				.created(DateFormat.getDateInstance())
 				.build());
 	}
 	public UserVO findById(int id) {

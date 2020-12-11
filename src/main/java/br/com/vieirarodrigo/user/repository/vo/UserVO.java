@@ -22,15 +22,15 @@ import lombok.Setter;
 @Entity
 @Table(name = "USER")
 public class UserVO implements Serializable {
-	private static final long serialVersionUID = 1L;
+	public static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int id;
+	public int id;
 	@Column(name = "FULL_NAME")
-	private String fullname;
-	private String email;
-	private String nickname;
-	private String password;
+	public String fullname;
+	public String email;
+	public String nickname;
+	public String password;
 	@Column(name = "CREATED_AT")
-	private Date created;
+	public Date created;
 }
